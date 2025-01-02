@@ -25,12 +25,12 @@ public class Main {
         Jugador jugador = new Jugador("Juan", 18, manos.get(0));
         Jugador bot = new Jugador("BOTMaster", 18, manos.get(1));
 
-        System.out.println("Mano del " + jugador.toString());
+        System.out.println("Mano del " + jugador);
         lstCartas = new ArrayList<>();
         for (Carta mano : manos.get(0)) {
             System.out.print(mano.toString() + " ");
         }
-        System.out.println("\nMano del " + bot.toString());
+        System.out.println("\nMano del " + bot);
         for (Carta mano : manos.get(1)) {
             System.out.print(mano.toString() + " ");
         }
@@ -42,7 +42,7 @@ public class Main {
                 int valorEntrada = sc.nextInt() - 1;
 
                 // Validar el índice ingresado
-                if ((valorEntrada == -1 && lstCartas.size() == 0) || valorEntrada < -1 || valorEntrada >= manos.get(0).size()) {
+                if ((valorEntrada == -1 && lstCartas.isEmpty()) || valorEntrada < -1 || valorEntrada >= manos.get(0).size()) {
                     System.out.println("Índice inválido, intenta de nuevo.");
                     continue;
                 }
@@ -51,7 +51,7 @@ public class Main {
                 } else {
                     // Juega la carta del jugador
                     carta = manos.get(0).get(valorEntrada);
-                    if (lstCartas.size() == 0 || carta.getColor() == mesa.carta.getColor() || carta.getNumero() == mesa.carta.getNumero()) {
+                    if (lstCartas.isEmpty() || carta.getColor() == mesa.carta.getColor() || carta.getNumero().equals(mesa.carta.getNumero())) {
                         lstCartas.add(carta);
                         manos.get(0).remove(valorEntrada); // Remover la carta seleccionada
                         mesa.asignarJugada(jugador, carta);
@@ -59,7 +59,7 @@ public class Main {
                         System.out.println("Carta invalida, intenta de nuevo.");
                         continue;
                     }
-                    if (manos.get(0).size() == 0) {
+                    if (manos.get(0).isEmpty()) {
                         System.out.print("Jugador Ganador");
                         break;
                     }
@@ -74,11 +74,11 @@ public class Main {
                     lstCartas.add(cartaBot);
                     manos.get(1).remove(valorBot); // Remover la carta jugada por el bot
                 }
-                if (manos.get(1).size() == 0) {
+                if (manos.get(1).isEmpty()) {
                     System.out.print("Jugador Bot Ganador");
                     break;
                 }
-                System.out.println("Mesa actual: " + mesa.toString());
+                System.out.println("Mesa actual: " + mesa);
                 System.out.print("Cartas del jugador: ");
                 for (Carta mano : manos.get(0)) {
                     System.out.print(mano.toString() + " ");
@@ -95,7 +95,7 @@ public class Main {
     public static int botPlayer(Carta carta, List<Carta> lstCarta) {
         for (int i = 0; i < lstCarta.size(); i++) {
             Carta cartaV = lstCarta.get(i);
-            if (carta.getColor() == cartaV.getColor() || carta.getNumero() == cartaV.getNumero()) {
+            if (carta.getColor() == cartaV.getColor() || carta.getNumero().equals(cartaV.getNumero())) {
                 return i; // Devuelve el índice si la carta cumple alguna condición
             }
         }
@@ -104,12 +104,12 @@ public class Main {
 
     public static List<List<Carta>> dividirCartas(List<Carta> lista, int jugadores) {
         List<List<Carta>> resultado = new ArrayList<>();
-        int tamañoParte = lista.size() / jugadores;
+        int tamanoParte = lista.size() / jugadores;
         int sobrante = lista.size() % jugadores;
 
         int inicio = 0;
         for (int i = 0; i < jugadores; i++) {
-            int fin = inicio + tamañoParte + (i < sobrante ? 1 : 0);
+            int fin = inicio + tamanoParte + (i < sobrante ? 1 : 0);
             resultado.add(new ArrayList<>(lista.subList(inicio, fin))); // Crear nueva lista para evitar conflictos
             inicio = fin;
         }
