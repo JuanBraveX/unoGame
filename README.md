@@ -29,3 +29,7 @@ unoGame/
 │   └── controller/   # Controladores para manejar la lógica y la vista
 ├── resources/        # Archivos multimedia (imágenes, sonidos)
 └── test/             # Pruebas unitarias e integración
+```
+## Enlaces
+
+[Diagrama de Clases](https://drive.google.com/file/d/1Hze_W-9Ahd6JcdKGyDljCwSXBArEJ8Xq/view?usp=sharing)
