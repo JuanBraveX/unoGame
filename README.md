@@ -4,19 +4,19 @@
 **UnoGame** es una versión digital del popular juego de cartas UNO. El proyecto está diseñado para proporcionar una experiencia de juego divertida y accesible para un solo jugador (contra IA) o multijugador (local y en línea).  
 
 ## Objetivos
-- Implementar las reglas oficiales de UNO.
-- Crear un sistema multijugador (local y en línea).
-- Diseñar una interfaz gráfica intuitiva y atractiva.
-- Garantizar el rendimiento y la estabilidad en diferentes dispositivos.
+- Implementar las reglas oficiales de UNO (30%).
+- Crear un sistema multijugador (local y en línea)(5%).
+- Diseñar una interfaz gráfica intuitiva y atractiva(0%).
+- Garantizar el rendimiento y la estabilidad en diferentes dispositivos(0%).
 
 ---
 
 ## Características
-- **Modo Individual:** Juega contra una IA adaptable.
-- **Multijugador Local:** Compite con amigos en el mismo dispositivo.
-- **Multijugador en Línea:** Juega con personas alrededor del mundo.
-- **Interfaz Gráfica:** Diseño interactivo y amigable.
-- **Cumplimiento de Reglas:** Compatible con las reglas oficiales de UNO.
+- **Modo Individual:** Juega contra un alogorimo (30%).
+- **Multijugador Local:** Compite con amigos en el mismo dispositivo(0%).
+- **Multijugador en Línea:** Juega con personas alrededor del mundo(0%).
+- **Interfaz Gráfica:** Diseño interactivo y amigable(0%).
+- **Cumplimiento de Reglas:** Compatible con las reglas oficiales de UNO(5%).
 
 ---
 
